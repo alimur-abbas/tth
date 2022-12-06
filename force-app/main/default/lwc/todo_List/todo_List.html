@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="To Do List">
+        <lightning-layout  multiple-rows="true">
+            <lightning-layout-item size="10">
+                <div class="slds-p-left_medium">
+                     <lightning-input class="validate" type="text" label="Enter what is in your mind " placeholder="Enter Todo" required variant="label-hidden"  message-when-value-missing="Please name your task"></lightning-input>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="2">
+                <div>
+                    <lightning-button label="+" class="slds-p-left_medium " onclick={handleAddTodo}></lightning-button>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="10">
+                <div class="slds-p-left_medium slds-p-top_medium">
+                    <p><b>To-Do</b></p>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="10">
+                <template for:each={todoList} for:item="todo">
+                    <div key={todo} class="slds-p-top_medium slds-p-left_medium">
+                        <lightning-badge key={todo} label={todo} variant="inverse" ></lightning-badge>
+                    </div>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item size="2">
+                <template for:each={todoList} for:item="todo">
+                    <div key={todo} class="slds-p-top_medium slds-p-left_medium">
+                        <lightning-input type="checkbox" value={todo} onchange={handleDone}></lightning-input>  
+                    </div>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item size="10">
+                <template if:true={done}>
+                <div class="slds-p-left_medium slds-p-top_medium">
+                    <p><b>Done</b></p>
+                </div>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item size="10">
+                <template for:each={doneList} for:item="done">
+                    <div key={done} class="slds-p-top_medium slds-p-left_medium">
+                        <lightning-badge key={done} label={done} variant="inverse" ></lightning-badge>
+                    </div>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    
+</template>

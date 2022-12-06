@@ -1,0 +1,18 @@
+<template>
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={oppsList.data}
+                columns={colsForOpp}>
+        </lightning-datatable>
+    </div>
+
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={consList.data}
+                columns={colsForCon}>
+        </lightning-datatable>
+    </div>
+    
+</template>

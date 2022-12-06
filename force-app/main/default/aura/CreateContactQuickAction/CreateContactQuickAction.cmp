@@ -1,0 +1,17 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="CreateContactFromQuickAction">
+    <aura:attribute name="firstName" type="String" />
+    <aura:attribute name="lastName" type="String" />
+    <aura:attribute name="Email" type="String" />
+    <aura:attribute name="Phone" type="Long" />
+    <lightning:card>
+        <div class="slds-p-left_medium slds-p-right_medium">
+            <lightning:input name="firstName" label="First Name" value="{!v.firstName}" />
+            <lightning:input name="lastName" label="Last Number" required="true" value="{!v.lastName}" />
+            <lightning:input name="Email" label="Email" value="{!v.Email}" />
+            <lightning:input name="Phone" label="Phone" value="{!v.Phone}" />
+        </div>
+        <div class="slds-p-top_medium slds-align_absolute-center">
+            <lightning:button variant="Brand" label="save" onclick="{!c.callCreateContact}"  />
+        </div>
+    </lightning:card>
+</aura:component>	

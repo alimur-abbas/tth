@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:registerEvent name="cmpEvt" type="c:LearningCmpEvt"/>
+    <div>
+        <lightning:button label="Click on child" variant="Neutral" class="slds-align_absolute-center"  title="Neutral action" onclick="{! c.handleClick }"/>
+    </div>
+
+</aura:component>	

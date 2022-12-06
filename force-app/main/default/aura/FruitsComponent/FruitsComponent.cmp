@@ -1,0 +1,69 @@
+<aura:component implements="flexipage:availableForAllPageTypes" >
+    <lightning:card title="Fruits">
+        
+    <div class="c-container">
+        <lightning:layout multipleRows="true" >
+            <lightning:layoutItem size="12" padding="around-small">
+                <div class="header-column slds-align_absolute-center">                  
+                    <p>Fruits Name</p>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <lightning:layout multipleRows="true">
+                    <lightning:layoutItem size="4" padding="around-small">
+                        <div class="header-column slds-align_absolute-center">                  
+                            <p>Apple</p>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="4" padding="around-small">
+                        <div class="header-column slds-align_absolute-center">                  
+                            <p>Watermelon</p>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="4" padding="around-small">
+                        <div class="header-column slds-align_absolute-center">                  
+                            <p>Pineapple</p>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="4" padding="around-small">
+                        <div class="header-column slds-align_absolute-center">                  
+                            <p>Guava</p>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="4" padding="around-small">
+                        <div class="header-column slds-align_absolute-center">                  
+                            <p>Sweet Lime</p>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="4" padding="around-small">
+                        <div class="header-column slds-align_absolute-center">                  
+                            <p>Papaya</p>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="4" padding="around-small">
+                        <div class="header-column slds-align_absolute-center">                  
+                            <p>Grapes</p>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="4" padding="around-small">
+                        <div class="header-column slds-align_absolute-center">                  
+                            <p>Orange</p>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="4" padding="around-small">
+                        <div class="header-column slds-align_absolute-center">                  
+                            <p>Lemon</p>
+                        </div>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem size="12" padding="around-small">
+                <div class="header-column slds-align_absolute-center">
+                    <p> Enough Fruits for Today.</p>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    </lightning:card>
+</aura:component>

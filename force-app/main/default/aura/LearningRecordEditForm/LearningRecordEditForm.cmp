@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="recordId" type="Id" />
+<lightning:recordEditForm recordId="{!v.recordId}" objectApiName="Contact" onsubmit="{!c.handleSubmit}">
+<lightning:inputField fieldName="FirstName" />
+<lightning:inputField fieldName="LastName" />
+<lightning:inputField fieldName="Email" />
+<lightning:inputField fieldName="Phone" />
+<lightning:inputField fieldName="Title" />
+<lightning:inputField fieldName="Department" />
+<div class="slds-m-top_medium">
+    <lightning:button label="Save" variant="brand" type="submit" />
+</div>
+
+</lightning:recordEditForm>
+
+</aura:component>	

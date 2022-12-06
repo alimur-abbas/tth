@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="Greeting" type="String" default="Welcome" />
+    <aura:handler event="c:LearningAppEvt" action="{!c.handleEvent}" />
+    <lightning:card title="{!v.Greeting}" >
+        <p>
+            {!v.Greeting}
+        </p>
+       
+    </lightning:card>
+    
+
+</aura:component>	

@@ -1,0 +1,42 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<!--   <aura:handler name="render" value="{!this}" action="{!c.doRender}" /> --> 
+<!--<aura:handler name="onClick" event="C:BlockClickEvent" action="{!c.blockClickHandler}" />-->
+<aura:method name="startGame" action="{!c.doInit}" description="Starting game again"></aura:method>
+<aura:method name="reshuffle" action="{!c.reshuffleBoard}" description="Reshuffling Board as the user has lose "></aura:method>
+<aura:attribute name="words" type="List" access="private" />
+<aura:attribute name="winWord" type="String" access="private" />
+<aura:attribute name="movesLeft" type="Integer" default="0"  access="private"/>
+<aura:attribute name="mode" type="String" default="easy" />
+<aura:attribute name="blockSize" type="Integer" default="4" />
+<aura:attribute name="result" type="String" />
+<aura:attribute name="boardDisable" type="boolean" default="false" />
+
+<div class="board">
+    <lightning:layout multipleRows="true">
+    <lightning:layoutItem  padding="around-small">
+       <div class ="slds-text-heading_medium"> Word : <span class="win-word"> {!v.winWord}</span></div>
+    </lightning:layoutItem>
+    <lightning:layoutItem  padding="around-small">
+        <div class ="slds-text-heading_medium">Result : {!v.result}</div>
+    </lightning:layoutItem>
+    <lightning:layoutItem  padding="around-small">
+        <div class ="slds-text-heading_medium">Moves left : {!(3- v.movesLeft)}</div>
+    </lightning:layoutItem>
+    </lightning:layout>
+
+    <aura:if isTrue="{!v.boardDisable}">
+        <div class="DisableBlock"> </div>
+    </aura:if>
+    
+
+
+    <lightning:layout multipleRows="true">
+        <aura:iteration items="{!v.words}" var="wordObj">
+            <lightning:layoutItem size="{!v.blockSize}" padding="around-small">
+                <c:BlockComponent label="{!wordObj.word}" isOpen="{!wordObj.Open}"  onclick="{!c.blockClickHandler}"> </c:BlockComponent>
+                </lightning:layoutItem>
+        </aura:iteration>
+    </lightning:layout>
+</div>
+</aura:component>

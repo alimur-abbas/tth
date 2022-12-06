@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="firstValue" type="Decimal" />
+    <aura:attribute name="secondValue" type="Decimal" />
+    <aura:attribute name="finalValue" type="Decimal" />
+    <aura:attribute name="isReadOnly" type="Boolean" default="false" /> 
+
+
+    <lightning:card title="Calculator">
+        <div class="slds-p-left_medium slds-p-right_medium">
+            <lightning:input name="firstNumber" label="First Number" value="{!v.firstValue}" placeholder="type here..."/>
+            <lightning:input name="secondNumber" label="Second Number" value="{!v.secondValue}" placeholder="type here..."/>
+            <lightning:input name="Result" label="Result" value="{!v.finalValue}" readonly="{!v.isReadOnly}"/>
+        </div>
+        <div class="slds-p-top_medium slds-p-left_medium slds-align_absolute-center">
+            <lightning:buttonGroup>
+                <lightning:button label="Add" onclick="{!c.handleClick}" />
+                <lightning:button label="Sub" onclick="{!c.handleClick}" />
+                <lightning:button label="Mul" onclick="{!c.handleClick}" />
+                <lightning:button label="Div" onclick="{!c.handleClick}"/>
+                <lightning:button variant="destructive-text" label="clear" onclick="{!c.handleClick}"/>
+            </lightning:buttonGroup>
+        </div>
+    </lightning:card>
+</aura:component>

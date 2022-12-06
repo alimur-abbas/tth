@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Calculator Using lwc">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium">
+                <lightning-input type="number" label="First Number" value={firstNumber} ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium">
+                <lightning-input type="number" label="Second Number" value={secondNumber} ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium ">
+                <template for:each={resultArray} for:item="val">
+                    <p key={val}>{val}</p>
+
+                </template>
+                
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-p-top_medium slds-p-left_medium slds-align_absolute-center">
+                <lightning-button-group>
+                    <lightning-button label="Add" onclick={handleClick}></lightning-button>
+                    <lightning-button label="Sub" onclick={handleClick}></lightning-button>
+                    <lightning-button label="Mul" onclick={handleClick}></lightning-button>
+                    <lightning-button label="Div" onclick={handleClick}></lightning-button>
+                    <lightning-button label="clear" variant="destructive-text" onclick={handleClick} title="Will clear the array."></lightning-button>
+                </lightning-button-group>
+            </div>
+           
+        </div>
+    </lightning-card>
+    
+</template>

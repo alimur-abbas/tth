@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Track" icon-name="standard:acccount">
+       Hello{trackParam}
+    </lightning-card>
+    <lightning-card title="Api" icon-name="standard:acccount">
+        Hello{apiParam}
+     </lightning-card>
+     <lightning-card title="NonReactive" icon-name="standard:acccount">
+        Hello{nonReactiveParam}
+     </lightning-card>
+     <div>
+        <lightning-button label="Change Value" onclick={change}></lightning-button>
+     </div>
+     <c-child-y track-param={trackParam} api-param={apiParam} non-reactive-param={nonReactiveParam}></c-child-y>
+    
+</template>

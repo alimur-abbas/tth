@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Search Opportunity">
+        <lightning-input type="search" label="Opportunity Amount" value={searchKey} onchange={handleSearch}></lightning-input>
+        <template for:each={opps} for:item="opp">
+            <p key={opp}>
+                Opportunity Name:{opp.Name},<br>
+            </p>
+
+        </template>
+    </lightning-card>
+    
+</template>

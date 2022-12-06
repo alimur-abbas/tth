@@ -1,0 +1,37 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="BoardPanelController">
+<aura:attribute name="modes" type="List" default="[
+{'label': 'Easy', 'value': 'easy'},
+{'label': 'Medium', 'value': 'medium'},
+{'label': 'Hard', 'value': 'hard'}
+]" />
+<aura:attribute name="selectedMode" type="String"/>
+<aura:attribute name="isDisable" type="Boolean" default="true" />
+<aura:attribute name="isDisableStart" type="Boolean" default="true" />
+<aura:handler event="c:ResultApplicationEvent" action="{!c.ResultEventHandler}" />
+
+
+<lightning:card  title="Word Shuffle">
+    
+    <lightning:layout horizontalAlign ="center" multipleRows="true">   
+        <lightning:layoutItem  padding="around-small">
+            <lightning:combobox name="gameMode" aura:id="gameModes" label="Game Mode" variant="label-hidden" options="{!v.modes}" value="inProgress" onchange="{!c.enableStartButton}" placeholder="Select Game Mode" />
+        </lightning:layoutItem>
+        <lightning:layoutItem  padding="around-small">
+            <lightning:button variant="brand" label="Start New Game" title="Start New Game" disabled="{!v.isDisableStart}" onclick="{!c.startGame}" />
+        </lightning:layoutItem>
+        <lightning:layoutItem  padding="around-small">
+            <lightning:button label="Reshuffle" title="Reshuffle" disabled="{!v.isDisable}" onclick="{!c.reshuffleBoard}"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12" >
+            <aura:if isTrue="{! (v.selectedMode != null)}">
+                <c:Board aura:id="boardComp" mode="{!v.selectedMode}"></c:Board>
+            
+              <!--  <aura:set attribute="else">
+                    Else Executed.
+                </aura:set> --> 
+            </aura:if>
+        </lightning:layoutItem>
+    </lightning:layout>
+</lightning:card>
+
+</aura:component>

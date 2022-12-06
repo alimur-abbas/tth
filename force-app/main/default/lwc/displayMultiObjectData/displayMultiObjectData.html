@@ -1,0 +1,21 @@
+<template>
+
+
+    <template if:true={responseReceived}>
+
+
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="contacts"
+                    data={details.data}
+                    columns={cols}
+                    hide-checkbox-column="true">
+            </lightning-datatable>
+        </div>
+    </template>
+
+
+
+
+
+</template>

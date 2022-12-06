@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <lightning:card title="Create Contact">
+        <lightning:recordEditForm aura:id="recordEditForm"
+                objectApiName="Contact">
+                <lightning:messages />
+                <lightning:inputField fieldName="Name" />
+                <lightning:inputField fieldName="Email" />
+                <lightning:inputField fieldName="Phone" onchange="" />
+                <lightning:button class="slds-m-top_small" type="submit" label="Create new" />
+        </lightning:recordEditForm>
+    </lightning:card>
+    
+</aura:component>

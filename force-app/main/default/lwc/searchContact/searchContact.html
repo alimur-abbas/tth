@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Search Contact">
+        <lightning-input type="search" label="Search Contact" name="searchContact"  onchange={handleSearchContactChange}></lightning-input>
+        <template for:each={conList} for:item="con">
+            <p key={con}>
+                Contact Name:{con.Name},<br>
+                Contact Email:{con.Email},<br>
+            </p>
+
+        </template>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <!-- <p>
+        {contacts}
+    </p> -->
+  <!--  <lightning-input label="Name" value={name} onchange={handleChange}></lightning-input>-->
+    <!-- <template for:each={contact2} for:item="con">      
+                <p key={con.id}>{con.Email}</p>  
+    </template> -->
+<p> tu devider h</p>
+    <template for:each={contacts.data} for:item="con">      
+        <p key={con.id}> Abc:  {con.Email}</p>  
+    </template>
+
+
+    <lightning-button label="Get Contacts" onclick={getContacts}></lightning-button>
+
+
+    <template for:each={numbers} for:item="number">
+        <p key={number}>{number}</p>
+    </template>
+</template>
